@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-py_library(
+py_binary(
     name = "grpcio",
     srcs = ["grpc/__init__.py"],
     deps = [
@@ -10,6 +10,10 @@ py_library(
         ":channel",
         ":interceptor",
         ":server",
+    ],
+    main = "grpc/__init__.py",
+    imports = [
+        "grpc/",
     ],
 )
 
