@@ -13,6 +13,7 @@ py_binary(
         ":interceptor",
         ":server",
         "//src/python/grpcio/grpc/_cython:cygrpc",
+        "//src/python/grpcio/grpc/framework/foundation",
         requirement('enum34'),
         requirement('six'),
     ],
