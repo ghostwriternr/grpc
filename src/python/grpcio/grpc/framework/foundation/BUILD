@@ -22,11 +22,18 @@ py_library(
 py_library(
     name = "callable_util",
     srcs = ["callable_util.py"],
+    deps = [
+        requirement("enum34"),
+        requirement("six"),
+    ],
 )
 
 py_library(
     name = "future",
     srcs = ["future.py"],
+    deps = [
+        requirement("six"),
+    ],
 )
 
 py_library(
@@ -48,4 +55,7 @@ py_library(
 py_library(
     name = "stream",
     srcs = ["stream.py"],
+    deps = [
+        requirement("six"),
+    ],
 )
