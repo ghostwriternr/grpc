@@ -1,3 +1,4 @@
+load("@grpc_python_dependencies//:requirements.bzl", "requirement")
 package(default_visibility = ["//visibility:public"])
 
 py_library(
@@ -31,6 +32,9 @@ py_library(
 py_library(
     name = "logging_pool",
     srcs = ["logging_pool.py"],
+    deps = [
+        requirement("futures"),
+    ],
 )
 
 py_library(
