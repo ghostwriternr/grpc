@@ -67,9 +67,11 @@ py_library(
             ":_thread_pool",
             ":_from_grpc_import_star",
             "//src/python/grpcio_tests/tests/unit/framework/common",
+            "//src/python/grpcio_tests/tests/testing",
             requirement('six'),
         ],
         imports=["../../",],
         data=glob(["credentials/**"]),
     ) for test_file_name in GRPCIO_TESTS_UNIT
 ]
+
