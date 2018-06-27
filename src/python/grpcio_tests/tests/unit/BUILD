@@ -71,7 +71,9 @@ py_library(
             requirement('six'),
         ],
         imports=["../../",],
-        data=glob(["credentials/**"]),
+        data=[
+            "//src/python/grpcio_tests/tests/unit/credentials",
+        ],
     ) for test_file_name in GRPCIO_TESTS_UNIT
 ]
 
