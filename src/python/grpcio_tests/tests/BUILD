@@ -1,22 +1,46 @@
+load("@grpc_python_dependencies//:requirements.bzl", "requirement")
+
 package(default_visibility = ["//visibility:public"])
 
-py_test(
-    name = "auth_test",
-    srcs = ["unit/_auth_test.py"],
-    main = "unit/_auth_test.py",
-    size = "small",
+filegroup(
+    name = "tests_json",
+    srcs = ["tests.json",],
+)
+
+py_library(
+    name = "_loader",
+    srcs = ["_loader.py",],
     deps = [
-        "//src/python/grpcio/grpc:grpcio",
+        requirement('coverage'),
     ],
 )
 
-py_test(
-    name = "logging_pool",
-    srcs = ["unit/framework/foundation/_logging_pool_test.py"],
-    main = "unit/framework/foundation/_logging_pool_test.py",
-    size = "small",
+py_library(
+    name = "_result",
+    srcs = ["_result.py",],
     deps = [
-        "//src/python/grpcio/grpc:grpcio",
+        requirement('six'),
     ],
+)
+
+py_library(
+    name = "_runner",
+    srcs = ["_runner.py",],
+    deps = [
+        ":_loader",
+        ":_result",
+        requirement('six'),
+    ],
+    imports=["../",],
+)
+
+py_library(
+    name = "tests",
+    srcs = ["__init__.py",],
+    deps = [
+        ":_loader",
+        ":_runner",
+    ],
+    imports=["../",],
 )
 
