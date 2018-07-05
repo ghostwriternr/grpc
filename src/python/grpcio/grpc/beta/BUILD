@@ -17,9 +17,7 @@ py_library(
 py_library(
     name = "client_adaptations",
     srcs = ["_client_adaptations.py"],
-    deps = [
-        "//src/python/grpcio/grpc:grpcio",
-    ]
+    imports=["../../",]
 )
 
 py_library(
@@ -30,33 +28,31 @@ py_library(
 py_library(
     name = "server_adaptations",
     srcs = ["_server_adaptations.py"],
-    deps = [
-        "//src/python/grpcio/grpc:grpcio",
-    ],
+    imports=["../../",],
 )
 
 py_library(
     name = "implementations",
     srcs = ["implementations.py"],
-    deps = [
-        "//src/python/grpcio/grpc:grpcio",
-    ],
+    imports=["../../",],
 )
 
 py_library(
     name = "interfaces",
     srcs = ["interfaces.py"],
     deps = [
-        "//src/python/grpcio/grpc:grpcio",
         requirement("six"),
     ],
+    imports=["../../",],
 )
 
 py_library(
     name = "utilities",
     srcs = ["utilities.py"],
     deps = [
-        "//src/python/grpcio/grpc/beta",
+        ":implementations",
+        ":interfaces",
         "//src/python/grpcio/grpc/framework/foundation",
     ],
 )
+
