@@ -2,16 +2,16 @@ load("@grpc_python_dependencies//:requirements.bzl", "requirement")
 package(default_visibility = ["//visibility:public"])
 
 py_library(
-    name = "face_lib",
+    name = "face",
     srcs = ["__init__.py",],
     deps = [
-        ":base",
+        ":face_lib",
         ":utilities",
     ],
 )
 
 py_library(
-    name = "face",
+    name = "face_lib",
     srcs = ["face.py"],
     deps = [
         "//src/python/grpcio/grpc/framework/foundation",
@@ -27,6 +27,6 @@ py_library(
     deps = [
         "//src/python/grpcio/grpc/framework/common",
         "//src/python/grpcio/grpc/framework/foundation:stream",
-        "//src/python/grpcio/grpc/framework/interfaces:face",
+        ":face_lib",
     ],
 )
