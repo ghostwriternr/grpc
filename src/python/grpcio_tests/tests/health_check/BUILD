@@ -8,7 +8,9 @@ py_test(
     deps = [
         "//src/python/grpcio/grpc:grpcio",
         "//src/python/grpcio_health_checking/grpc_health/v1:grpc_health",
+        "//src/python/grpcio_tests/tests/unit:test_common",
     ],
     imports = ["../../",],
 )
+
 

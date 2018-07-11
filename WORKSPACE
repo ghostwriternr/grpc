@@ -6,11 +6,11 @@ grpc_test_only_deps()
 
 new_http_archive(
     name = "cython",
-    sha256 = "6dcd30b5ceb887b2b965ee7ceb82ea3acb5f0642fe2206c7636b45acea4798e5",
+    sha256 = "d68138a2381afbdd0876c3cb2a22389043fa01c4badede1228ee073032b07a27",
     urls = [
-        "https://github.com/cython/cython/archive/3732784c45cfb040a5b0936951d196f83a12ea17.tar.gz",
+        "https://github.com/cython/cython/archive/c2b80d87658a8525ce091cbe146cb7eaa29fed5c.tar.gz",
     ],
-    strip_prefix = "cython-3732784c45cfb040a5b0936951d196f83a12ea17",
+    strip_prefix = "cython-c2b80d87658a8525ce091cbe146cb7eaa29fed5c",
     build_file = "//third_party:cython.BUILD",
 )
 
