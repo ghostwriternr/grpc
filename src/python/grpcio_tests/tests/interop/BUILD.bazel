@@ -33,7 +33,6 @@ py_library(
         "//src/proto/grpc/testing:py_messages_proto",
         "//src/proto/grpc/testing:py_test_proto",
         requirement('google-auth'),
-        requirement('requests'),
         requirement('enum34'),
     ],
     imports=["../../",],
